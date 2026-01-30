@@ -1,5 +1,19 @@
-@media (max-width: 1024px) {
-  .navbar-title {
-    display: none;
+/* Styles dành cho màn hình lớn (desktop, laptop) */
+
+@media only screen and (min-width: 1024px) {
+  .text-overlay h1 {
+    font-size: 4rem;
+  }
+  .text-overlay p {
+    font-size: 1.5rem;
+  }
+
+  .menu-list li {
+    font-size: 20px;
+  }
+
+  .info-content p,
+  .info-content li p {
+    font-size: 1rem;
   }
 }

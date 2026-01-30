@@ -1,58 +1,24 @@
-@media (max-width: 768px) {
-  .menu nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+/* Styles cho mobile (màn hình nhỏ) */
+
+@media only screen and (max-width: 767px) {
+  .text-overlay h1 {
+    font-size: 2rem;
+  }
+  .text-overlay p {
+    font-size: 1rem;
   }
 
-  .menu nav ul li {
-    padding: 5px 0;
+  .menu-list {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .menu-list li {
     font-size: 16px;
   }
 
-  .section.flex {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .column {
-    margin-right: 0;
-    width: 100%;
-  }
-
-  .column,
-  .card {
-    width: 100%;
-    margin: 0;
-  }
-
-  .certificate-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .certificate-section > div {
-    width: 100%;
-  }
-
-  .certificate-section img {
-    width: 100%;
-    height: auto;
-  }
-
-  .project-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .project-card {
-    width: 100%;
-  }
-
-  .project-card img {
-    width: 100%;
-    height: auto;
+  .info-grid .info-card {
+    margin-bottom: 20px;
   }
 }

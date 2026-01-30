@@ -1,42 +1,46 @@
-const form = document.getElementById("email-form");
-const emailInput = document.getElementById("email-input");
-const errorMsg = document.getElementById("error-msg");
-const formContainer = document.getElementById("form-container");
-const infoContainer = document.getElementById("info-container");
+document.addEventListener("DOMContentLoaded", function () {
+  // Xử lý form email
+  const emailForm = document.getElementById("email-form");
+  const emailInput = document.getElementById("email-input");
+  const infoContainer = document.getElementById("info-container");
 
-const regex =
-  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  emailForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = emailInput.value.trim();
-
-  if (!regex.test(email)) {
-    errorMsg.style.display = "block";
-    return;
-  }
-
-  if (email.toLowerCase() === "huyndfx69187@funix.edu.vn") {
-    errorMsg.style.display = "none";
-    formContainer.classList.add("hidden");
-    infoContainer.classList.remove("hidden");
-  } else {
-    errorMsg.textContent = "Email không tồn tại!";
-    errorMsg.style.display = "block";
-  }
-});
-
-document.querySelectorAll(".info-card").forEach((card) => {
-  const btn = card.querySelector(".toggle-btn");
-  const content = card.querySelector(".info-content");
-
-  btn.addEventListener("click", () => {
-    if (content.classList.contains("hidden")) {
-      content.classList.remove("hidden");
-      btn.textContent = "View Less";
-    } else {
-      content.classList.add("hidden");
-      btn.textContent = "View More";
+    if (!emailInput.checkValidity()) {
+      emailInput.classList.add("is-invalid");
+      return;
     }
+
+    emailInput.classList.remove("is-invalid");
+    emailInput.classList.add("is-valid");
+
+    // Ẩn form
+    document.getElementById("form-container").classList.add("d-none");
+
+    // Hiện thông tin cá nhân ở đúng vị trí đó
+    infoContainer.classList.remove("d-none");
+  });
+
+  emailInput.addEventListener("input", function () {
+    if (emailInput.validity.valid) {
+      emailInput.classList.remove("is-invalid");
+    } else {
+      emailInput.classList.add("is-invalid");
+    }
+  });
+
+  // Xử lý các nút “View More”
+  const toggleButtons = document.querySelectorAll(".toggle-btn");
+  toggleButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const content = this.nextElementSibling;
+      if (content) {
+        content.classList.toggle("d-none");
+        this.textContent = content.classList.contains("d-none")
+          ? "View More"
+          : "View less";
+      }
+    });
   });
 });

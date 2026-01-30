@@ -1,51 +1,18 @@
-@media (max-width: 1024px) and (min-width: 768px) {
-  .navbar-title {
-    display: none;
+/* Styles cho tablet (kích thước trung bình) */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .text-overlay h1 {
+    font-size: 3rem;
+  }
+  .text-overlay p {
+    font-size: 1.2rem;
   }
 
-  .section.flex {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .menu-list {
     gap: 20px;
   }
 
-  .column {
-    margin-right: 10px;
-  }
-
-  .column,
-  .card {
-    width: 100%;
-    margin: 0;
-  }
-
-  .certificate-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .certificate-section > div {
-    width: 100%;
-  }
-
-  .certificate-section img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .project-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .project-card {
-    width: 100%;
-  }
-
-  .project-card img {
-    max-width: 100%;
-    height: auto;
+  .menu-list li {
+    font-size: 18px;
   }
 }
