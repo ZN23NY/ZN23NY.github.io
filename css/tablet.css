@@ -1,0 +1,18 @@
+/* Styles cho tablet (kích thước trung bình) */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .text-overlay h1 {
+    font-size: 3rem;
+  }
+  .text-overlay p {
+    font-size: 1.2rem;
+  }
+
+  .menu-list {
+    gap: 20px;
+  }
+
+  .menu-list li {
+    font-size: 18px;
+  }
+}

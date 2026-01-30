@@ -1,0 +1,24 @@
+/* Styles cho mobile (màn hình nhỏ) */
+
+@media only screen and (max-width: 767px) {
+  .text-overlay h1 {
+    font-size: 2rem;
+  }
+  .text-overlay p {
+    font-size: 1rem;
+  }
+
+  .menu-list {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .menu-list li {
+    font-size: 16px;
+  }
+
+  .info-grid .info-card {
+    margin-bottom: 20px;
+  }
+}
